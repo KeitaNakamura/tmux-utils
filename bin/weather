@@ -238,7 +238,7 @@ run() {
   local temp=$(echo $condition | jq '.temp' | sed 's/"//g')
   local text=$(echo $condition | jq '.text' | sed 's/"//g')
 
-  local symbol=$(__yahoo_get_condition_symbol $text)
+  local symbol=$(__yahoo_get_condition_symbol "$text")
   echo "$symbol ${temp}°$UNIT"
   # echo $text
 }
